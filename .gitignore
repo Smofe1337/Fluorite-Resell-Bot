@@ -1,0 +1,10 @@
+__pycache__
+venv
+.env
+.vscode
+.DS_Store
+.pytest_cache
+randkey.py
+uploaded-orders
+bot/uploaded-images/*
+!bot/uploaded-images/default.png

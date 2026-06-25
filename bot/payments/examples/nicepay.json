@@ -1,0 +1,10 @@
+{
+   "status":"success",
+   "data":{
+      "payment_id":"v51681-e1f93e-c52c10-0cfcfa-51eghO",
+      "amount":30000,
+      "currency":"RUB",
+      "link":"https://nicepay.io/pay/v51681-e1f93e-c52c10-0cfcfa-51eghO",
+      "expired":1746822627
+   }
+}

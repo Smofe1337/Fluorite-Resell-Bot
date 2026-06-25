@@ -1,0 +1,148 @@
+{
+    "welcome_msg": "<b>👋 Hello, {}! Welcome to Fluorite Shop</b>",
+    "send_email_msg": "Please send your email\n\n<b>We do not use this email for newsletters or any other purposes</b>\nIt is only required for the payment system so that their support team can contact you if there are any issues",
+    
+    "catalog_btn": "Catalog",
+    "profile_btn": "Profile",
+    "gift_key_btn": "Gift key",
+    "pay_btn": "Go to payment",
+    "cancel_order_btn": "Cancel order",
+
+    "keys_text": "<b>Keys</b>",
+
+    "copy_key_btn": "Copy key",
+    "copy_link_btn": "Copy link",
+    "copy_sample_btn": "Copy sample",
+    "contact_support_btn": "Support",
+    "reset_hwid_btn": "Reset HWID",
+    "ref_program_btn": "Referral program",
+    "download_orders_btn": "My orders",
+    "back_btn": "Back",
+
+    "top_up_balance_btn": "Top up balance",
+    "back_to_purchases_btn": "Back to purchase",
+
+    "private_channel_btn": "Go to private channel",
+    
+    "select_game": "<b>Select a game</b>",
+    
+    "key_text": "<b>Key -></b> <code>{}</code>",
+    "game_text": "<b>Game -> {}</b>",
+    "duration_text": "<b>Duration {}</b>",
+    
+    "day_btn": "1 Day - {}$",
+    "week_btn": "7 Days - {}$",
+    "month_btn": "30 Days - {}$",
+    
+    "user_id_prof": "🆔 <b>ID -> </b><code>{}</code>",
+    "user_balance_prof": "💰 <b>Balance -> </b>{}$",
+    "total_order_prof": "📦 <b>Total Orders -> </b>{}",
+    "total_spent_prof": "💸 <b>Total Amount Spent -> </b>{}$",
+    "register_at_prof": "📅 <b>Registration Date -> </b>{}",
+    "is_vip_yes_prof": "👑 <b>VIP</b> -> Yes",
+    "is_vip_no_prof": "👑 <b>VIP</b> -> No",
+    
+    "order_id_ord": "🔖 <b>Order ID:</b> <code>{}</code>",
+    "product_ord": "🛍️ <b>Product:</b> {}",
+    "amount_ord": "💰 <b>Amount:</b> {}$",
+    "paymethod_ord": "💳 <b>Payment Method:</b> {}",
+    "created_at_ord": "🕒 <b>Created At:</b> {}",
+    "pay_before_ord": "⏰ <b>Pay Before:</b> {}",
+    "user_agreement_ord": "<b><a href=\"https://telegra.ph/Polzovatelskoe-soglashenie-07-28-14\">User agreement</a></b>",
+    
+    "one_day": "-> <code>1 Day</code>",
+    "seven_days": "-> <code>7 Days</code>",
+    "thirty_days": "-> <code>30 Days</code>",
+
+    "an_error_text": "<b>An error occurred\n\nError code -> </b><code>{}</code>\nPlease contact t.me/Smofegod for assistance",
+    "failed_verif_text": "<b>An error occurred during the verification of your account</b>\nError code -> <code>{}</code>\n\nPlease contact technical support to resolve the issue\n\n<b>Using the template below</b>\n\nI received an error with code <code>{}</code> when trying to access the private channel\nMy id -> <code>{}</code>\nMy link -> <code>{}</code>",
+    "sample_text": "I received an error with code {} when trying to access the private channel\nMy ID -> {}\nMy link -> {}",
+
+    "success_payment_text": "<b>✅ Payment Successful</b>\n\nThank you for your purchase!\nYour key -> <code>{}</code>\n\n<b>Enjoy using our product!</b>",
+    "success_payment_gift_text": "<b>✅ Payment Successful</b>\n\nThank you for your purchase!\nLink -> <code>{}</code>\n\n<b>Share this link with a friend</b>",
+
+    "success_payment_balance_text": "<b>✅ Payment completed successfully</b>\n\nCredited -> {}$\nBalance -> {}$",
+    
+    "key_not_found_text": "Failed to retrieve key\nPlease contact support to resolve the issue",
+    "payment_expired_text": "Payment time has expired",
+
+    "you_are_banned_text": "<b>You are banned</b>\n\nYou have violated the project rules by sharing a private invite link to the restricted channel\nAll your keys have been banned",
+    "access_denied_text": "<b>Access denied</b>",
+
+    "game_not_found_text": "Couldn't find the game",
+
+    "select_duration_text": "<b>Select key duration</b>",
+    "select_paymethod_text": "<b>Select payment method</b>",
+
+    "need_input_number_text": "<b>Invalid format!\nPlease enter the amount as a number</b>\nExample: 300",
+
+    "hwid_reset_success_text": "✅ <b>HWID successfully reseted</b>",
+    "hwid_reset_error_text": "<b>Failed to reset HWID</b>",
+
+    "input_amount_text": "<b>Please enter the amount you want to add to your balance (in dollars)</b>",
+
+    "email_not_valid_text": "You have entered an invalid email address\nEmail example: example@gmail.com",
+
+    "new_referral_text": "<b><a href='{}'>{}</a> just joined using your referral link!</b>\nTotal invited -> {}",
+    "new_referral_with_bonus_text": "<b><a href='{}'>{}</a> just joined using your referral link!</b>\n\nTotal invited -> {}\nYou've invited {} users - you've received a bonus of {}$!\nCurrent balance -> {}$",
+
+    "cant_invite_youself_text": "<b>You can't invite yourself</b>",
+
+    "insufficient_funds_text": "<b>Insufficient funds</b>\n\nYou need at least {}$ to complete this purchase\nRequired top-up amount -> {}$\nYour current balance -> {}$",
+    "help_text": "<b>If you have any questions / problems please contact -></b> t.me/Smofegod",
+
+    "referral_title": "<b>🤝 Referral Program</b>\n",
+    "referral_stats": "👥 <b>Invited:</b> {} people",
+    "referral_progress": "🎁 <b>Until bonus:</b> {} invites left",
+    "referral_progress_bar": "[{}] {}%",
+    "referral_reward_info": "💰 <b>Next bonus:</b> from {}$ to {}$",
+    "referral_link_label": "\n🔗 <b>Your link:</b>\n<code>{}</code>",
+    "referral_copy_btn": "📋 Copy link",
+    "referral_share_btn": "📤 Share",
+    "referral_how_btn": "❓ How does it work?",
+    "referral_how_text": "<b>❓ How does the referral program work?</b>\n\n<b>1.</b> Share your link with anyone\n<b>2.</b> They open the link and start the bot\n<b>3.</b> Every <b>10 invites</b> you receive a bonus to your balance\n<b>4.</b> The more people you invite — the higher the bonus!\n\n💡 <i>Bonus amount is randomly chosen within the displayed range and grows with each milestone</i>",
+    "referral_back_to_ref_btn": "◀️ Back to referral program",
+
+    "balance_update_notification": "<b>Your balance has been updated by the administrator</b>\nCurrent balance -> {}$",
+
+    "cancel_yes_btn": "Yes",
+    "cancel_no_btn": "No, back to payment",
+
+    "cancel_confirm_text": "Do you really want to cancel order <code>{}</code>?",
+    "cancel_success_text": "Order <code>{}</code> has been successfully cancelled",
+
+    "back_to_catalog_btn": "Back to Catalog",
+    
+    "order_not_found_alert": "Couldn't find order",
+    "order_already_cancelled_alert": "This order has already been cancelled",
+
+    "order_cancel_msg": "Your order <code>{}</code> has been cancelled by the administrator",
+
+    "coupon_invalid_text": "Oops, that doesn't look right! Please use the format:\n<code>/activate your coupon</code>",
+    "coupone_inactive_text": "This coupon is inactive",
+    "coupon_redemption_limit_exceeded_text": "Usage limit exceeded for this coupon",
+    "non_vip_user_error_text": "This coupon is only available for vip users",
+    "expired_coupon_text": "This coupon has expired",
+    "coupone_not_found_text": "Coupon does not exist",
+    "max_user_redemptions_exceeded_text": "You have exceeded the maximum number of redemptions for this coupon",
+
+    "order_unavailable_alert": "This order is no longer available\nIt has been cancelled, paid for, or expired",
+
+    "my_orders_title": "<b>📋 Your Orders</b>\n",
+    "my_orders_empty": "You don't have any orders yet",
+    "my_orders_item": "├ <b>{}</b> — {} {}\n│  <code>{}</code> · {}\n",
+    "my_orders_product": "│  🔑 <code>{}</code>\n",
+    "my_orders_page": "\n📄 Page {} of {}",
+    "my_orders_prev_btn": "⬅️",
+    "my_orders_next_btn": "➡️",
+
+    "success_activate_coupon_balance": "<b>Coupon activated successfully!</b>\nAmount added -> {}$\nYour new balance -> {}$",
+
+    "captcha_text": "🔒 <b>Security check</b>\n\nSolve to continue:\n\n<b>{} = ?</b>\n\n⏱ You have <b>60 seconds</b>",
+    "captcha_success_text": "✅ <b>Verification passed!</b>",
+    "captcha_wrong_text": "❌ <b>Wrong answer.</b> Try again:\n\n<b>{} = ?</b>",
+    "captcha_expired_text": "⏰ <b>Time's up.</b> Try again later",
+    "referral_attack_ban_text": "🚫 <b>Your account has been banned</b>\n\nBot attack detected through your referral link\nAll your keys have been banned\n\n💰 To unban, pay <b>{}</b>",
+    "referral_unban_pay_btn": "💳 Pay to unban",
+    "referral_unban_success_text": "✅ <b>Account unbanned!</b>"
+}
