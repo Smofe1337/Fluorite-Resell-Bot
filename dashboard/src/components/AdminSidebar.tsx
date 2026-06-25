@@ -5,7 +5,8 @@ import {
   Book,
   Package,
   Sun,
-  Moon
+  Moon,
+  MessageSquare,
 } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import {
@@ -45,12 +46,12 @@ const menuItems = [
     id: 'orders',
     title: 'Orders Management',
     icon: Package,
-  }
-  /*{
+  },
+  {
     id: 'broadcast',
     title: 'Broadcast',
     icon: MessageSquare,
-  },*/
+  },
 ];
 
 export function AdminSidebar({ activeSection, onSectionChange }: AdminSidebarProps) {

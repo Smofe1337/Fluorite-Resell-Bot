@@ -22,6 +22,7 @@ from bot.handlers.fsm.paymethod.nicepay.input_email import NicepayEmailRouter
 from bot.handlers.fsm.security.captcha import CaptchaRouter
 
 from bot.security.referral_guard import ReferralGuard
+from bot.security.channel_guard import ChannelGuard
 
 from bot.commands.start.start import router as start_router
 from bot.commands.help import router as help_router
@@ -30,6 +31,7 @@ from bot.commands.admins.coupon import router as msg_coupone_router
 from bot.commands.activate_coupon import router as coupon_command
 
 referral_guard = ReferralGuard()
+channel_guard = ChannelGuard()
 
 referral_handler = ReferralHandler(
     container.user_service, container.keys_service, container.order_service,
@@ -69,7 +71,8 @@ callback_router = CallbackRouter(
 
 text_router = TextRouter(container.key_board, container.user_service)
 channel_router = ChannelRouter(
-    container.user_service, container.fluorite_api, container.key_board, container.keys_service
+    container.user_service, container.fluorite_api, container.key_board, container.keys_service,
+    channel_guard, container.channel_guard_service
 )
 create_coupon_router = CreateCouponRouter(container.money_coupon_strategy, container.base_coupon_strategy)
 balance_input_router = BalanceInputRouter(container.key_board)

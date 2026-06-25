@@ -10,6 +10,7 @@ from bot.database.repository.keys import KeysRepository
 from bot.database.repository.orders import OrdersRepository
 from bot.database.repository.dashboard.staff import StaffRepository
 from bot.database.repository.coupons import CouponsRepository
+from bot.database.repository.channel_guard import ChannelGuardRepository
 
 from bot.database.service.users import UserService
 from bot.database.service.games import GameService
@@ -17,6 +18,7 @@ from bot.database.service.keys import KeysService
 from bot.database.service.orders import OrdersService
 from bot.database.service.dashboard.staff import StaffService
 from bot.database.service.coupons import CouponsService
+from bot.database.service.channel_guard import ChannelGuardService
 
 from bot.handlers.keyboard import KeyBoard
 from bot.handlers.callbacks.process_game import ProcessGames
@@ -71,6 +73,7 @@ class ServiceContainer:
         self.order_repo = OrdersRepository()
         self.staff_repo = StaffRepository(self.password_manager)
         self.coupons_repo = CouponsRepository()
+        self.channel_guard_repo = ChannelGuardRepository()
 
     def _init_services(self):
         self.user_service = UserService(self.user_repo)
@@ -79,6 +82,7 @@ class ServiceContainer:
         self.order_service = OrdersService(self.order_repo, self.user_service)
         self.staff_service = StaffService(self.staff_repo)
         self.coupons_service = CouponsService(self.coupons_repo, self.user_service)
+        self.channel_guard_service = ChannelGuardService(self.channel_guard_repo)
 
     def _init_ui(self):
         self.key_board = KeyBoard(self.game_service, self.keys_service)

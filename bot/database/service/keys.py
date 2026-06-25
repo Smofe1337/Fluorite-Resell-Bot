@@ -27,6 +27,9 @@ class KeysService:
             await self.update_key(key.key, KeyStatus.RECEIVED.value)
             return key
 
+    async def count_available(self, game_name: str, duration: int) -> int:
+        return await self._keys_repo.count_available(game_name, duration)
+
     async def has_keys(self, game_name: str) -> bool:
         return await self._keys_repo.has_available_keys(game_name)
 

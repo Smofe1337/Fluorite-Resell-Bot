@@ -292,7 +292,7 @@ export const uploadImage = async (file: File): Promise<string> => {
 
 export const updateOrderStatus = async(order_id: string, status: string) => {
     await axios.post(
-        BASE_URL + 'orders/update-status/', 
+        BASE_URL + 'orders/update-status/',
         {
             order_id: order_id,
             status: status,
@@ -303,4 +303,30 @@ export const updateOrderStatus = async(order_id: string, status: string) => {
             }
         }
     );
+};
+
+export const startBroadcast = async (
+    text: string,
+    photos: string[],
+    buttons: { text: string; url: string }[],
+) => {
+    const response = await axios.post(
+        BASE_URL + 'broadcast/send/',
+        { text, photos, buttons },
+        {
+            headers: {
+                Authorization: `Bearer ${getToken()}`,
+            },
+        }
+    );
+    return response.data;
+};
+
+export const getBroadcastStatus = async () => {
+    const response = await axios.get(BASE_URL + 'broadcast/status/', {
+        headers: {
+            Authorization: `Bearer ${getToken()}`,
+        },
+    });
+    return response.data;
 };

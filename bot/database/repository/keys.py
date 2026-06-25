@@ -1,5 +1,5 @@
 import logging
-from sqlalchemy import select, and_, update, or_, delete
+from sqlalchemy import select, and_, update, or_, delete, func
 from bot.database.models.keys import Keys
 from bot.database.repository.base import BaseRepository
 from bot.core.exceptions import KeyAlreadyReceived, KeyTokenNotFound, KeyNotFound
@@ -37,6 +37,15 @@ class KeysRepository(BaseRepository):
                 Keys.status == KeyStatus.AVAILABLE.value
             )).limit(1))
             return result.scalars().first()
+
+    async def count_available(self, game_name: str, duration: int) -> int:
+        async with self._session() as session:
+            result = await session.execute(select(func.count()).select_from(Keys).where(and_(
+                Keys.game_name == game_name,
+                Keys.duration == duration,
+                Keys.status == KeyStatus.AVAILABLE.value
+            )))
+            return result.scalar() or 0
 
     async def has_available_keys(self, game_name: str) -> bool:
         async with self._session() as session:

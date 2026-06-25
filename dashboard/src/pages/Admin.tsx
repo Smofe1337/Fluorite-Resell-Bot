@@ -6,6 +6,7 @@ import UserManagement from '@/components/UserManagement';
 import GameManagement from '@/components/GameManagement';
 import KeysManagement from '@/components/KeysManagement';
 import OrdersManagement from '@/components/OrdersManagement';
+import BroadcastManagement from '@/components/BroadcastManagement';
 
 const Admin = () => {
   const [activeSection, setActiveSection] = useState('dashboard');
@@ -20,6 +21,8 @@ const Admin = () => {
         return <KeysManagement />;
       case 'orders':
         return <OrdersManagement />;
+      case 'broadcast':
+        return <BroadcastManagement />;
       default:
         return <UserManagement />;
     }

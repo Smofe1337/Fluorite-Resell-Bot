@@ -1,6 +1,7 @@
 from bot.database.db import engine
 from bot.database.base import Base
 from bot.database.models.users import Users
+from bot.database.models.channel_guard import ChannelGuardLog
 
 
 async def init_db():

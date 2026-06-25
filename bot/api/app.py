@@ -14,6 +14,7 @@ from bot.api.payments.hooks.aaio import AaioHookRouter
 from bot.api.payments.hooks.nicepay import NicepayHookRouter
 from bot.api.payments.hooks.cryptobot import CryptobotHookRouter
 from bot.api.uploads.management import UploadsRouter
+from bot.api.broadcast.management import BroadcastRouter
 
 
 app = FastAPI()
@@ -39,8 +40,10 @@ aaio_router = AaioHookRouter(container.order_service, container.user_service, co
 nicepay_router = NicepayHookRouter(container.order_service, container.user_service, container.keys_service, container.key_board, container.bot)
 cryptobot_hook_router = CryptobotHookRouter(container.order_service, container.user_service, container.keys_service, container.key_board, container.bot, container.crypto_bot)
 uploads_router = UploadsRouter()
+broadcast_router = BroadcastRouter(container.user_service, container.bot)
 
 app.include_router(router=uploads_router.router, prefix='/api', tags=['Uploads'])
+app.include_router(router=broadcast_router.router, prefix='/api', tags=['Broadcast'])
 app.include_router(router=games_router.router, prefix='/api', tags=['Games'])
 app.include_router(router=keys_router.router, prefix='/api', tags=['Keys'])
 app.include_router(router=nicepay_router.router, prefix='/api', tags=['Payments'])

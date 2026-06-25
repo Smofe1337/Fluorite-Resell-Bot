@@ -4,6 +4,7 @@ from bot.database.service.users import UserService
 from bot.database.service.keys import KeysService
 from bot.enums.orders import OrderStatus, OrderType
 from bot.enums.keys import KeyStatus
+from config import Config
 from typing import List, Dict
 
 logger = logging.getLogger(__name__)
@@ -96,15 +97,55 @@ class OrdersService:
     ):
         logger.info(f'Order {order_id} paid: user={user_id}, sum={sum}, type={order_type}')
 
+        consumed_key: bool = False
+
         if order_type == OrderType.KEY.value:
             await key_service.update_key(key, KeyStatus.SOLD.value)
             await key_service.bind_key_to_user(user_id, key)
+            consumed_key = True
 
         elif order_type == OrderType.GIFT.value:
             await key_service.update_key(key, KeyStatus.PENDING.value, token)
+            consumed_key = True
 
         await self.update_order(order_id, OrderStatus.PAID.value, key)
         await self._user_service.handle_order(user_id, sum, invite_link)
+
+        if consumed_key:
+            await self._notify_low_stock(key_service, order_id)
+
+    async def _notify_low_stock(self, key_service: KeysService, order_id: str) -> None:
+        order = await self._order_repo.get_order_by_id(order_id)
+        game_name: str | None = getattr(order, 'game_name', None)
+        duration: int | None = getattr(order, 'duration', None)
+        if game_name is None or duration is None:
+            return
+
+        remaining: int = await key_service.count_available(game_name, duration)
+        if remaining > Config.LOW_STOCK_THRESHOLD:
+            return
+        if remaining != Config.LOW_STOCK_THRESHOLD and remaining != 0:
+            return
+
+        if remaining == 0:
+            text = (
+                '⚠️ <b>Out of stock</b>\n'
+                f'Game: <b>{game_name}</b>\n'
+                f'Duration: <b>{duration} days</b>'
+            )
+        else:
+            text = (
+                '⚠️ <b>Low stock</b>\n'
+                f'Game: <b>{game_name}</b>\n'
+                f'Duration: <b>{duration} days</b>\n'
+                f'Remaining: <b>{remaining}</b>'
+            )
+
+        from bot.services.init_services import bot
+        try:
+            await bot.send_message(chat_id=Config.OWNER_ID, text=text)
+        except Exception as e:
+            logger.error(f'Failed to send low-stock alert: {e}')
 
     async def get_all_orders(self):
         return await self._order_repo.get_all_orders()
